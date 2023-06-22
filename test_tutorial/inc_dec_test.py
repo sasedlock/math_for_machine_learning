@@ -1,4 +1,4 @@
-import inc_dec
+import test_tutorial.inc_dec as inc_dec
 import unittest
 
 class Test_TestIncrementDecrement(unittest.TestCase):
