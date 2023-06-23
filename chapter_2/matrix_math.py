@@ -5,6 +5,12 @@ def add(a,b):
         pass
     else:
         for i in range(len(a)):
-            toReturn.append(a[i] + b[i])
+            if type(a[i]) == list:
+                ithRow = []
+                for j in range(len(a[i])):
+                    ithRow.append(a[i][j] + b[i][j])
+                toReturn.append(ithRow)
+            else:
+                toReturn.append(a[i] + b[i])
     
     return toReturn
