@@ -1,4 +1,10 @@
 def add(a,b):
+    """Adds two items together, whether they are a scalar, vector or matrix
+    
+    :a: first item to add, represented by a list
+    :b: second item to add, represented by a list
+    :return: result, represented by a list 
+    """
     toReturn = []
     
     if len(a) != len(b):
