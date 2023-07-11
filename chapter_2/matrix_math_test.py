@@ -17,4 +17,10 @@ class Test_TestMatrixMath(unittest.TestCase):
         actual = matrix_math.add([[1,2,3],[4,5,6],[7,8,9]],[[1,2,3],[4,5,6],[7,8,9]])
         self.assertEqual(expected,actual)
 
+    # todo: add test and code for case when addition cannot occur, such as when a m x n matrix is added to a i x j matrix and m!=i or n!=j
+
+    def test_multiply_scalar(self):
+        expected = [6]
+        actual = matrix_math.multiply([3],[2])
+        self.assertEqual(expected,actual)
     
