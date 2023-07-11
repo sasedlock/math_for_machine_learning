@@ -20,3 +20,16 @@ def add(a,b):
                 toReturn.append(a[i] + b[i])
     
     return toReturn
+
+def multiply(a,b):
+    """Multiplies two items together, whether they are a scalar, vector or matrix
+    
+    :a: first itme to multiply, represented by a list
+    :b: second item to multiply, represented by a list
+    :return: result, represented by a list
+    """
+    toReturn = []
+
+    toReturn.append(a[0] * b[0])
+    
+    return toReturn
