@@ -30,6 +30,18 @@ def multiply(a,b):
     """
     toReturn = []
 
-    toReturn.append(a[0] * b[0])
+    # if the length of both the inputs is just one, assume the alogithm is processing two scalars
+    if len(a) == 1 and len(b) == 1:
+        toReturn.append(a[0] * b[0])
+        return toReturn
+    
+    if len(a) == len(b):
+        # if the second input's first item is a list, assume we are multiplying vectors
+        if isinstance(b[0],list):
+            sum = 0
+            for i in range(len(a)):
+                sum += a[i] * b[i][0]
+        
+        toReturn.append(sum)
     
     return toReturn

@@ -19,8 +19,13 @@ class Test_TestMatrixMath(unittest.TestCase):
 
     # todo: add test and code for case when addition cannot occur, such as when a m x n matrix is added to a i x j matrix and m!=i or n!=j
 
-    def test_multiply_scalar(self):
+    def test_multiply_scalars(self):
         expected = [6]
         actual = matrix_math.multiply([3],[2])
+        self.assertEqual(expected,actual)
+
+    def test_multiply_vectors(self):
+        expected = [11]
+        actual = matrix_math.multiply([1,2],[[3],[4]])
         self.assertEqual(expected,actual)
     
