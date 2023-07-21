@@ -28,4 +28,10 @@ class Test_TestMatrixMath(unittest.TestCase):
         expected = [11]
         actual = matrix_math.multiply([1,2],[[3],[4]])
         self.assertEqual(expected,actual)
+
+    def test_multiply_n_x_n_matrix(self):
+        expected = [[19,22],[43,50]]
+        actual = matrix_math.multiply([[1,2],[3,4]],[[5,6][7,8]])
+        self.assertEqual(expected,actual)
+
     

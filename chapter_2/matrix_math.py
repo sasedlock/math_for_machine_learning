@@ -36,12 +36,13 @@ def multiply(a,b):
         return toReturn
     
     if len(a) == len(b):
-        # if the second input's first item is a list, assume we are multiplying vectors
-        if isinstance(b[0],list):
+        # if the second input's first item is a list and it's length is 1, assume we are multiplying vectors
+        if isinstance(b[0],list) and len(b[0]) == 1:
             sum = 0
             for i in range(len(a)):
                 sum += a[i] * b[i][0]
+            toReturn.append(sum)
         
-        toReturn.append(sum)
+        
     
     return toReturn
