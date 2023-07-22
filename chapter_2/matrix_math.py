@@ -55,16 +55,17 @@ def multiply(a,b):
                     ithRow.append(sum)
                 toReturn.append(ithRow)
     
-    # else we're working with matricies of differing sizes
-    # else:
-    #     for i in range(len(a)):
-    #             ithRow = []
-    #             for j in range(len(a[0])):
-    #                 sum = 0
-    #                 for k in range(len(a[0])):
-    #                     sum += a[i][k] * b[k][j]
-    #                 ithRow.append(sum)
-    #             toReturn.append(ithRow)
+    # todo: can this logic be combined with the one above? 
 
-    
+    # else we're working with matricies of differing sizes
+    else:
+        for i in range(len(a)):
+                ithRow = []
+                for j in range(len(b[0])):
+                    sum = 0
+                    for k in range(len(a[0])):
+                        sum += a[i][k] * b[k][j]
+                    ithRow.append(sum)
+                toReturn.append(ithRow)
+
     return toReturn

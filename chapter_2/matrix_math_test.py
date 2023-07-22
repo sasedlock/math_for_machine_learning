@@ -34,9 +34,12 @@ class Test_TestMatrixMath(unittest.TestCase):
         actual = matrix_math.multiply([[1,2],[3,4]],[[5,6],[7,8]])
         self.assertEqual(expected,actual)
 
-    # def test_multiply_non_n_x_n_matrix(self):
-    #     expected = [[22,28],[49,64]]
-    #     actual = matrix_math.multiply([[1,2,3],[4,5,6]],[[1,2],[3,4],[5,6]])
-    #     self.assertEqual(expected,actual)
+    def test_multiply_non_n_x_n_matrix(self):
+        expected = [[22,28],[49,64]]
+        actual = matrix_math.multiply([[1,2,3],[4,5,6]],[[1,2],[3,4],[5,6]])
+        self.assertEqual(expected,actual)
 
-    
+    def test_multiply_another_non_n_x_n_matrix(self):
+        expected = [[6,4,2],[-2,0,2],[3,2,1]]
+        actual = matrix_math.multiply([[0,2],[1,-1],[0,1]],[[1,2,3],[3,2,1]])
+        self.assertEqual(expected,actual)
