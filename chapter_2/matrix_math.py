@@ -30,6 +30,8 @@ def multiply(a,b):
     """
     toReturn = []
 
+    # todo: get length of a and b since it's referenced so often
+
     # if the length of both the inputs is just one, assume the alogithm is processing two scalars
     if len(a) == 1 and len(b) == 1:
         toReturn.append(a[0] * b[0])
@@ -42,7 +44,27 @@ def multiply(a,b):
             for i in range(len(a)):
                 sum += a[i] * b[i][0]
             toReturn.append(sum)
-        
-        
+        # else the second input is a list, and we're working with equal size matricies
+        else:
+            for i in range(len(a)):
+                ithRow = []
+                for j in range(len(a[0])):
+                    sum = 0
+                    for k in range(len(a[0])):
+                        sum += a[i][k] * b[k][j]
+                    ithRow.append(sum)
+                toReturn.append(ithRow)
+    
+    # else we're working with matricies of differing sizes
+    # else:
+    #     for i in range(len(a)):
+    #             ithRow = []
+    #             for j in range(len(a[0])):
+    #                 sum = 0
+    #                 for k in range(len(a[0])):
+    #                     sum += a[i][k] * b[k][j]
+    #                 ithRow.append(sum)
+    #             toReturn.append(ithRow)
+
     
     return toReturn
