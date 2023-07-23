@@ -69,3 +69,31 @@ def multiply(a,b):
                 toReturn.append(ithRow)
 
     return toReturn
+
+def identity_matrix(n):
+    """Returns an identity matrix of size n x n
+    
+    :n: the size of the identity matrix to return
+    :return: result, represented by a list
+    """
+    toReturn = []
+
+    # starting from 0, create a row that's of length n
+        # if the index for the current column is equal to the index of the current row, append 1, otherwise append 0
+        # add this row to the return element
+        # increment to the new row
+    if n == 1:
+        toReturn.append(1)
+
+    else:
+        for i in range(n):
+            ithRow = []
+            for j in range(n):
+                if i == j:
+                    ithRow.append(1)
+                else:
+                    ithRow.append(0)
+            toReturn.append(ithRow)
+
+    return toReturn
+    

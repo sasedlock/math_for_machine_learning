@@ -43,3 +43,20 @@ class Test_TestMatrixMath(unittest.TestCase):
         expected = [[6,4,2],[-2,0,2],[3,2,1]]
         actual = matrix_math.multiply([[0,2],[1,-1],[0,1]],[[1,2,3],[3,2,1]])
         self.assertEqual(expected,actual)
+
+    # todo: handle case when 0 or a negative number is provided
+    
+    def test_identity_matrix_1(self):
+        expected = [1]
+        actual = matrix_math.identity_matrix(1)
+        self.assertEqual(expected,actual)
+    
+    def test_identity_matrix_2(self):
+        expected = [[1,0],[0,1]]
+        actual = matrix_math.identity_matrix(2)
+        self.assertEqual(expected,actual)
+
+    def test_identity_matrix_3(self):
+        expected = [[1,0,0],[0,1,0],[0,0,1]]
+        actual = matrix_math.identity_matrix(3)
+        self.assertEqual(expected,actual)
