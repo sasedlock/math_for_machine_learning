@@ -105,6 +105,7 @@ def associated_matrix(a, i):
     :return: the associated matrix represented as a list of lists
     """
 
+
 def determinant(a):
     """Returns the determinant of a matrix
     
@@ -127,13 +128,13 @@ def determinant(a):
         det -= (a[0][1] * determinant([[a[1][0],a[1][2]],[a[2][0],a[2][2]]]))
         det += (a[0][2] * determinant([[a[1][0],a[1][1]],[a[2][0],a[2][1]]]))
 
-        for i in len(a[0]):
-            associated_matrix = []
-            associated_matrix_determinate = determinant(associated_matrix)
-            if i % 2 == 0:
-                det += (a[0][i] * associated_matrix_determinate)
-            else:
-                det -= (a[0][i] * associated_matrix_determinate)
+        # for i in len(a[0]):
+        #     associated_matrix = associated_matrix(a, i)
+        #     associated_matrix_determinate = determinant(associated_matrix)
+        #     if i % 2 == 0:
+        #         det += (a[0][i] * associated_matrix_determinate)
+        #     else:
+        #         det -= (a[0][i] * associated_matrix_determinate)
 
         return det
 
