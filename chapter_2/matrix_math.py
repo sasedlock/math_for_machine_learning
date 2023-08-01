@@ -104,7 +104,21 @@ def associated_matrix(a, i):
     :i: the column index to consider
     :return: the associated matrix represented as a list of lists
     """
+    toReturn = []
 
+    for l in range(len(a)):
+        lthRow = []
+        if l == i:
+            pass
+        else:
+            for k in range(len(a)):
+                if k == i:
+                    pass
+                else:
+                    lthRow.append(a[l][k])
+            toReturn.append(lthRow)
+
+    return toReturn
 
 def determinant(a):
     """Returns the determinant of a matrix
