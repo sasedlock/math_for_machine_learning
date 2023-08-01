@@ -77,3 +77,8 @@ class Test_TestMatrixMath(unittest.TestCase):
         expected = -306
         actual = matrix_math.determinant([[6,1,1],[4,-2,5],[2,8,7]])
         self.assertEqual(expected,actual)
+
+    def test_associated_matrix(self):
+        expected = [[]]
+        actual = matrix_math.associated_matrix([[1,2,3],[4,5,6],[7,8,9]])
+        self.assertEqual(expected,actual)
