@@ -108,7 +108,16 @@ def determinant(a):
         return a[0][0]*a[1][1]-a[0][1]*a[1][0]
 
     # else, we are working with a larger matrix and must recurse
-    # for another time...
+    # Take each value in the first row, and multiply it by the associated matrix's determinant
+    else:
+        det = 0
+        
+        # first record
+        det += (a[0][0] * determinant([[a[1][1],a[1][2]],[a[2][1],a[2][2]]]))
+        det -= (a[0][1] * determinant([[a[1][0],a[1][2]],[a[2][0],a[2][2]]]))
+        det += (a[0][2] * determinant([[a[1][0],a[1][1]],[a[2][0],a[2][1]]]))
+
+        return det
 
 def inverse_matrix(a):
     """Returns the inverse of a matrix, if it can be found

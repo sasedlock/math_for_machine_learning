@@ -66,7 +66,14 @@ class Test_TestMatrixMath(unittest.TestCase):
     #     actual = matrix_math.inverse_matrix([2,-1,0],[-1,2,-1],[0,-1,2])
     #     self.assertEqual(expected,actual)
 
-    def test_determinant(self):
+    # todo: case for when a non-square matrix is passed into determinant function
+    
+    def test_determinant_2x2(self):
         expected = -2
         actual = matrix_math.determinant([[1,2],[3,4]])
+        self.assertEqual(expected,actual)
+
+    def test_determinant_3x3(self):
+        expected = -306
+        actual = matrix_math.determinant([[6,1,1],[4,-2,5],[2,8,7]])
         self.assertEqual(expected,actual)
