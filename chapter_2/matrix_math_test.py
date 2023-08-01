@@ -60,3 +60,13 @@ class Test_TestMatrixMath(unittest.TestCase):
         expected = [[1,0,0],[0,1,0],[0,0,1]]
         actual = matrix_math.identity_matrix(3)
         self.assertEqual(expected,actual)
+
+    # def test_inverse_matrix(self):
+    #     expected = [[0.75,0.5,0.25],[0.5,1,0.5],[0.25,0.5,0.75]]
+    #     actual = matrix_math.inverse_matrix([2,-1,0],[-1,2,-1],[0,-1,2])
+    #     self.assertEqual(expected,actual)
+
+    def test_determinant(self):
+        expected = -2
+        actual = matrix_math.determinant([[1,2],[3,4]])
+        self.assertEqual(expected,actual)

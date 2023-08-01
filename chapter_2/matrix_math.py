@@ -96,4 +96,27 @@ def identity_matrix(n):
             toReturn.append(ithRow)
 
     return toReturn
+
+def determinant(a):
+    """Returns the determinant of a matrix
+    
+    :a: the matrix whose determinant to find
+    :return: the determinant
+    """
+    # if we are working with a 2x2 matrix, return the calculation
+    if len(a[0]) == 2 and len(a) == 2:
+        return a[0][0]*a[1][1]-a[0][1]*a[1][0]
+
+    # else, we are working with a larger matrix and must recurse
+    # for another time...
+
+def inverse_matrix(a):
+    """Returns the inverse of a matrix, if it can be found
+    
+    :a: the matrix to invert
+    :return: result, represented by a list
+    """
+    # Code modeled after algorithm described here: https://www.mathsisfun.com/algebra/matrix-inverse-minors-cofactors-adjugate.html
+
+
     
