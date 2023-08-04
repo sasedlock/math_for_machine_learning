@@ -108,7 +108,7 @@ def associated_matrix(a, i):
 
     for l in range(len(a)):
         lthRow = []
-        if l == i:
+        if l == 0:
             pass
         else:
             for k in range(len(a)):

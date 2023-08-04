@@ -87,3 +87,20 @@ class Test_TestMatrixMath(unittest.TestCase):
         expected = [[4,6],[7,9]]
         actual = matrix_math.associated_matrix([[1,2,3],[4,5,6],[7,8,9]],1)
         self.assertEqual(expected,actual)
+
+    def test_associated_matrix_index_0_2(self):
+        expected = [[4,5],[7,8]]
+        actual = matrix_math.associated_matrix([[1,2,3],[4,5,6],[7,8,9]],2)
+        self.assertEqual(expected,actual)
+
+    def test_associated_matrix_index_0_0_4x4(self):
+        expected = [[6,7,8],[10,11,12],[14,15,16]]
+        actual = matrix_math.associated_matrix([[1,2,3,4],[5,6,7,8],[9,10,11,12],[13,14,15,16]],0)
+        self.assertEqual(expected,actual)
+
+    def test_associated_matrix_index_0_2_4x4(self):
+        expected = [[5,6,8],[9,10,12],[13,14,16]]
+        actual = matrix_math.associated_matrix([[1,2,3,4],[5,6,7,8],[9,10,11,12],[13,14,15,16]],2)
+        self.assertEqual(expected,actual)
+
+
