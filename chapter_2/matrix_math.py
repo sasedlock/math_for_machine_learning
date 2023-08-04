@@ -120,6 +120,20 @@ def associated_matrix(a, i):
 
     return toReturn
 
+def associated_matrix(a, i, j):
+    """Returns the associated matrix of matrix a with row index i and column index j
+    
+    :a: the matrix of which to find it's associated matrix
+    :i: the row index to consider
+    :j: the column index to consider
+    :return: the associated matrix represented as a list of lists
+    """
+    toReturn = []
+    
+    # todo: tbd
+
+    return toReturn
+
 def determinant(a):
     """Returns the determinant of a matrix
     
@@ -144,6 +158,23 @@ def determinant(a):
                 det -= (a[0][i] * associated_matrix_determinate)
 
         return det
+
+def matrix_of_minors(a):
+    """Returns a matrix's matrix of minors, as defined by Step 1 of https://www.mathsisfun.com/algebra/matrix-inverse-minors-cofactors-adjugate.html
+
+    
+    :a: the matrix to invert
+    :return: matrix of minors, represented by a list of lists
+    """
+    toReturn = []
+
+    for i in range(len(a)):
+        ithRow = []
+        for j in range(len(a)):
+            ithRow.append(determinant(associated_matrix(a,i,j)))
+        toReturn.append(ithRow)
+
+    return toReturn
 
 def inverse_matrix(a):
     """Returns the inverse of a matrix, if it can be found

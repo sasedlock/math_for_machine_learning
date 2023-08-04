@@ -108,4 +108,7 @@ class Test_TestMatrixMath(unittest.TestCase):
         actual = matrix_math.associated_matrix([[1,2,3,4],[5,6,7,8],[9,10,11,12],[13,14,15,16]],2)
         self.assertEqual(expected,actual)
 
-
+    def test_matrix_of_minors_3x3(self):
+        expected = [[2,2,2],[-2,3,3],[0,-10,0]]
+        actual = matrix_math.matrix_of_minors([[3,0,2],[2,0,-2],[0,1,1]])
+        self.assertEqual(expected,actual)
