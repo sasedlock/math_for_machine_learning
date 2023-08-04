@@ -120,7 +120,8 @@ def associated_matrix(a, i):
 
     return toReturn
 
-def associated_matrix(a, i, j):
+# todo: horrible name
+def do_work(a, i, j):
     """Returns the associated matrix of matrix a with row index i and column index j
     
     :a: the matrix of which to find it's associated matrix
@@ -130,7 +131,17 @@ def associated_matrix(a, i, j):
     """
     toReturn = []
     
-    # todo: tbd
+    for k in range(len(a)):
+        kthRow = []
+        if k == i:
+            pass
+        else:
+            for l in range(len(a)):
+                if l == j:
+                    pass
+                else:
+                    kthRow.append(a[k][l])
+            toReturn.append(kthRow)
 
     return toReturn
 
@@ -161,7 +172,6 @@ def determinant(a):
 
 def matrix_of_minors(a):
     """Returns a matrix's matrix of minors, as defined by Step 1 of https://www.mathsisfun.com/algebra/matrix-inverse-minors-cofactors-adjugate.html
-
     
     :a: the matrix to invert
     :return: matrix of minors, represented by a list of lists
@@ -171,7 +181,32 @@ def matrix_of_minors(a):
     for i in range(len(a)):
         ithRow = []
         for j in range(len(a)):
-            ithRow.append(determinant(associated_matrix(a,i,j)))
+            ithRow.append(determinant(do_work(a,i,j)))
+        toReturn.append(ithRow)
+
+    return toReturn
+
+def matrix_of_cofactors(a):
+    """Returns a matrix's matrix of cofactors, as defined by Step 2 of https://www.mathsisfun.com/algebra/matrix-inverse-minors-cofactors-adjugate.html
+    
+    :a: the matrix to find cofactors for
+    :return: matrix of cofactors, represented by a list of lists
+    """
+    toReturn = []
+
+    for i in range(len(a)):
+        ithRow = []
+        for j in range(len(a)):
+            if i % 2 == 0:
+                if j % 2 != 0:
+                    ithRow.append(a[i][j])
+                else:
+                    ithRow.append(-a[i][j])
+            else:
+                if j % 2 == 0:
+                    ithRow.append(-a[i][j])
+                else:
+                    ithRow.append(a[i][j])
         toReturn.append(ithRow)
 
     return toReturn

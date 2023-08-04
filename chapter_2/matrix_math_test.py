@@ -112,3 +112,23 @@ class Test_TestMatrixMath(unittest.TestCase):
         expected = [[2,2,2],[-2,3,3],[0,-10,0]]
         actual = matrix_math.matrix_of_minors([[3,0,2],[2,0,-2],[0,1,1]])
         self.assertEqual(expected,actual)
+
+    def test_do_work_0_0(self):
+        expected = [[0,-2],[1,1]]
+        actual = matrix_math.do_work([[3,0,2],[2,0,-2],[0,1,1]],0,0)
+        self.assertEqual(expected,actual)
+
+    def test_do_work_1_1(self):
+        expected = [[3,2],[0,1]]
+        actual = matrix_math.do_work([[3,0,2],[2,0,-2],[0,1,1]],1,1)
+        self.assertEqual(expected,actual)
+
+    def test_do_work_2_2(self):
+        expected = [[3,0],[2,0]]
+        actual = matrix_math.do_work([[3,0,2],[2,0,-2],[0,1,1]],2,2)
+        self.assertEqual(expected,actual)
+
+    def test_matrix_of_cofactors(self):
+        expected = [[2,-2,2],[2,3,-3],[0,10,0]]
+        actual = matrix_math.matrix_of_cofactors([[2,2,2],[-2,3,3],[0,-10,0]])
+        self.assertEqual(expected,actual)
