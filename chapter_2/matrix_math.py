@@ -145,8 +145,6 @@ def determinant(a):
 
         return det
 
-
-
 def inverse_matrix(a):
     """Returns the inverse of a matrix, if it can be found
     

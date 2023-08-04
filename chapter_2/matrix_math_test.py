@@ -78,6 +78,11 @@ class Test_TestMatrixMath(unittest.TestCase):
         actual = matrix_math.determinant([[6,1,1],[4,-2,5],[2,8,7]])
         self.assertEqual(expected,actual)
 
+    def test_determinant_4x4(self):
+        expected = 3852
+        actual = matrix_math.determinant([[6,1,1,4],[4,-2,5,8],[2,8,7,12],[13,14,15,16]])
+        self.assertEqual(expected,actual)
+
     def test_associated_matrix_index_0_0(self):
         expected = [[5,6],[8,9]]
         actual = matrix_math.associated_matrix([[1,2,3],[4,5,6],[7,8,9]],0)
