@@ -135,20 +135,13 @@ def determinant(a):
     else:
         det = 0
         
-        # i = 0      i                   i+1,i+1, i+1,i+2   i+2,i+1, i+2,i+2
-        #            i
-        det += (a[0][0] * determinant([[a[1][1],a[1][2]],[a[2][1],a[2][2]]]))
-        # i = 1      i                   i   i-1  i  i+1    i+1     
-        det -= (a[0][1] * determinant([[a[1][0],a[1][2]],[a[2][0],a[2][2]]]))
-        det += (a[0][2] * determinant([[a[1][0],a[1][1]],[a[2][0],a[2][1]]]))
-
-        # for i in len(a[0]):
-        #     associated_matrix = associated_matrix(a, i)
-        #     associated_matrix_determinate = determinant(associated_matrix)
-        #     if i % 2 == 0:
-        #         det += (a[0][i] * associated_matrix_determinate)
-        #     else:
-        #         det -= (a[0][i] * associated_matrix_determinate)
+        for i in range(len(a[0])):
+            assoc_matrix = associated_matrix(a, i)
+            associated_matrix_determinate = determinant(assoc_matrix)
+            if i % 2 == 0:
+                det += (a[0][i] * associated_matrix_determinate)
+            else:
+                det -= (a[0][i] * associated_matrix_determinate)
 
         return det
 
