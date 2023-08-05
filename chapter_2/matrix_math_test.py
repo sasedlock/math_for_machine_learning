@@ -63,7 +63,7 @@ class Test_TestMatrixMath(unittest.TestCase):
 
     # def test_inverse_matrix(self):
     #     expected = [[0.75,0.5,0.25],[0.5,1,0.5],[0.25,0.5,0.75]]
-    #     actual = matrix_math.inverse_matrix([2,-1,0],[-1,2,-1],[0,-1,2])
+    #     actual = matrix_math.inverse_matrix([[2,-1,0],[-1,2,-1],[0,-1,2]])
     #     self.assertEqual(expected,actual)
 
     # todo: case for when a non-square matrix is passed into determinant function
@@ -131,4 +131,9 @@ class Test_TestMatrixMath(unittest.TestCase):
     def test_matrix_of_cofactors(self):
         expected = [[2,-2,2],[2,3,-3],[0,10,0]]
         actual = matrix_math.matrix_of_cofactors([[2,2,2],[-2,3,3],[0,-10,0]])
+        self.assertEqual(expected,actual)
+
+    def test_transpose(self):
+        expected = [[2,2,0],[-2,3,10],[2,-3,0]]
+        actual = matrix_math.transpose([[2,-2,2],[2,3,-3],[0,10,0]])
         self.assertEqual(expected,actual)

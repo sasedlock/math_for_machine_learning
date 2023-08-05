@@ -199,9 +199,9 @@ def matrix_of_cofactors(a):
         for j in range(len(a)):
             if i % 2 == 0:
                 if j % 2 != 0:
-                    ithRow.append(a[i][j])
-                else:
                     ithRow.append(-a[i][j])
+                else:
+                    ithRow.append(a[i][j])
             else:
                 if j % 2 == 0:
                     ithRow.append(-a[i][j])
@@ -211,13 +211,49 @@ def matrix_of_cofactors(a):
 
     return toReturn
 
+def transpose(a):
+    """Returns a transposed version of the matrix passed in
+    
+    :a: the matrix to transpose
+    :return: transposed matrix
+    """
+    for i in range(len(a)):
+        for j in range(len(a[0])):
+            if i <= j:
+                pass
+            else:
+                temp = a[j][i]
+                a[j][i] = a[i][j]
+                a[i][j] = temp
+    
+    return a
+
+def divide_matrix(a):
+    """Returns the result of multiplying each element in the input matrix by the input divisor
+    
+    :a: The matrix to be divided
+    :b: The divisor
+    :return: result, represented by a list of lists
+    """
+
+    pass
+
 def inverse_matrix(a):
     """Returns the inverse of a matrix, if it can be found
     
     :a: the matrix to invert
-    :return: result, represented by a list
+    :return: result, represented by a list of lists
     """
     # Code modeled after algorithm described here: https://www.mathsisfun.com/algebra/matrix-inverse-minors-cofactors-adjugate.html
 
+    # Step 1: Matrix of Minors
+    mat_of_minors = matrix_of_minors(a)
+    # Step 2: Matrix of Cofactors
+    mat_of_cofactors = matrix_of_cofactors(mat_of_minors)
+    # Step 3: Adjugate (aka transpose)
+    transpose_mat = transpose(mat_of_cofactors)
+    # Step 4: Multiply by 1/Determinant
+    determinant_of_mat = determinant(a)
+    return transpose_mat / determinant_of_mat
 
     
