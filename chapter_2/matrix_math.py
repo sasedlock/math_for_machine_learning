@@ -228,7 +228,7 @@ def transpose(a):
     
     return a
 
-def divide_matrix(a):
+def divide_matrix(a,b):
     """Returns the result of multiplying each element in the input matrix by the input divisor
     
     :a: The matrix to be divided
@@ -236,7 +236,11 @@ def divide_matrix(a):
     :return: result, represented by a list of lists
     """
 
-    pass
+    for i in range(len(a)):
+        for j in range(len(a[0])):
+            a[i][j] = (a[i][j] / b)
+    
+    return a
 
 def inverse_matrix(a):
     """Returns the inverse of a matrix, if it can be found
@@ -254,6 +258,6 @@ def inverse_matrix(a):
     transpose_mat = transpose(mat_of_cofactors)
     # Step 4: Multiply by 1/Determinant
     determinant_of_mat = determinant(a)
-    return transpose_mat / determinant_of_mat
+    return divide_matrix(transpose_mat,determinant_of_mat)
 
     
