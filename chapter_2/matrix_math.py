@@ -33,14 +33,17 @@ def multiply(a,b):
     length_a = len(a)
     length_b = len(b)
 
+    first_element_a = a[0]
+    first_element_b = b[0]
+
     # if the length of both the inputs is just one, assume the alogithm is processing two scalars
     if length_a == 1 and length_b == 1:
-        toReturn.append(a[0] * b[0])
+        toReturn.append(first_element_a * first_element_b)
         return toReturn
     
     if length_a == length_b:
         # if the second input's first item is a list and it's length is 1, assume we are multiplying vectors
-        if isinstance(b[0],list) and len(b[0]) == 1:
+        if isinstance(first_element_b,list) and len(first_element_b) == 1:
             sum = 0
             for i in range(length_a):
                 sum += a[i] * b[i][0]
@@ -49,9 +52,9 @@ def multiply(a,b):
         else:
             for i in range(length_a):
                 ithRow = []
-                for j in range(len(a[0])):
+                for j in range(len(first_element_a)):
                     sum = 0
-                    for k in range(len(a[0])):
+                    for k in range(len(first_element_a)):
                         sum += a[i][k] * b[k][j]
                     ithRow.append(sum)
                 toReturn.append(ithRow)
@@ -62,9 +65,9 @@ def multiply(a,b):
     else:
         for i in range(length_a):
                 ithRow = []
-                for j in range(len(b[0])):
+                for j in range(len(first_element_b)):
                     sum = 0
-                    for k in range(len(a[0])):
+                    for k in range(len(first_element_a)):
                         sum += a[i][k] * b[k][j]
                     ithRow.append(sum)
                 toReturn.append(ithRow)
