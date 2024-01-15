@@ -30,23 +30,24 @@ def multiply(a,b):
     """
     toReturn = []
 
-    # todo: get length of a and b since it's referenced so often
+    length_a = len(a)
+    length_b = len(b)
 
     # if the length of both the inputs is just one, assume the alogithm is processing two scalars
-    if len(a) == 1 and len(b) == 1:
+    if length_a == 1 and length_b == 1:
         toReturn.append(a[0] * b[0])
         return toReturn
     
-    if len(a) == len(b):
+    if length_a == length_b:
         # if the second input's first item is a list and it's length is 1, assume we are multiplying vectors
         if isinstance(b[0],list) and len(b[0]) == 1:
             sum = 0
-            for i in range(len(a)):
+            for i in range(length_a):
                 sum += a[i] * b[i][0]
             toReturn.append(sum)
         # else the second input is a list, and we're working with equal size matricies
         else:
-            for i in range(len(a)):
+            for i in range(length_a):
                 ithRow = []
                 for j in range(len(a[0])):
                     sum = 0
@@ -59,7 +60,7 @@ def multiply(a,b):
 
     # else we're working with matricies of differing sizes
     else:
-        for i in range(len(a)):
+        for i in range(length_a):
                 ithRow = []
                 for j in range(len(b[0])):
                     sum = 0
