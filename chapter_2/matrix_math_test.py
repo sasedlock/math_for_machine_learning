@@ -69,7 +69,9 @@ class Test_TestMatrixMath(unittest.TestCase):
     def test_inverse_matrix_4x4(self):
         expected = [[2/7,6/7,-3/7,-5/7],[-6/7,3/7,2/7,-6/7],[3/7,2/7,6/7,-25/7],[0,0,0,1]]
         actual = matrix_math.inverse_matrix([[2/7,-6/7,3/7,1],[6/7,3/7,2/7,2],[-3/7,2/7,6/7,3],[0,0,0,1]])
-        self.assertEqual(expected,actual)
+        for i in range(len(expected)):
+            for j in range(len(expected[i])):
+                self.assertAlmostEqual(expected[i][j],actual[i][j])
 
     # todo: case for when a non-square matrix is passed into determinant function
     
@@ -142,3 +144,6 @@ class Test_TestMatrixMath(unittest.TestCase):
         expected = [[2,2,0],[-2,3,10],[2,-3,0]]
         actual = matrix_math.transpose([[2,-2,2],[2,3,-3],[0,10,0]])
         self.assertEqual(expected,actual)
+
+if __name__ == '__main__':
+    unittest.main()
