@@ -59,7 +59,7 @@ def multiply(a,b):
                     ithRow.append(sum)
                 toReturn.append(ithRow)
     
-    # todo: can this logic be combined with the one above? 
+    # TODO: can this logic be combined with the one above? 
 
     # else we're working with matricies of differing sizes
     else:
@@ -124,7 +124,7 @@ def associated_matrix(a, i):
 
     return toReturn
 
-# todo: horrible name
+# TODO: horrible name
 def do_work(a, i, j):
     """Returns the associated matrix of matrix a with row index i and column index j
     

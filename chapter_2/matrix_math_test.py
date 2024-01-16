@@ -17,7 +17,7 @@ class Test_TestMatrixMath(unittest.TestCase):
         actual = matrix_math.add([[1,2,3],[4,5,6],[7,8,9]],[[1,2,3],[4,5,6],[7,8,9]])
         self.assertEqual(expected,actual)
 
-    # todo: add test and code for case when addition cannot occur, such as when a m x n matrix is added to a i x j matrix and m!=i or n!=j
+    # TODO: add test and code for case when addition cannot occur, such as when a m x n matrix is added to a i x j matrix and m!=i or n!=j
 
     def test_multiply_scalars(self):
         expected = [6]
@@ -44,7 +44,7 @@ class Test_TestMatrixMath(unittest.TestCase):
         actual = matrix_math.multiply([[0,2],[1,-1],[0,1]],[[1,2,3],[3,2,1]])
         self.assertEqual(expected,actual)
 
-    # todo: handle case when 0 or a negative number is provided
+    # TODO: handle case when 0 or a negative number is provided
     
     def test_identity_matrix_1(self):
         expected = [1]
@@ -73,7 +73,7 @@ class Test_TestMatrixMath(unittest.TestCase):
             for j in range(len(expected[i])):
                 self.assertAlmostEqual(expected[i][j],actual[i][j])
 
-    # todo: case for when a non-square matrix is passed into determinant function
+    # TODO: case for when a non-square matrix is passed into determinant function
     
     def test_determinant_2x2(self):
         expected = -2
