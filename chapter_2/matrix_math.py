@@ -101,31 +101,7 @@ def identity_matrix(n):
 
     return toReturn
 
-def associated_matrix(a, i):
-    """Returns the associated matrix of matrix a with column index i
-    
-    :a: the matrix of which to find it's associated matrix
-    :i: the column index to consider
-    :return: the associated matrix represented as a list of lists
-    """
-    toReturn = []
-
-    for l in range(len(a)):
-        lthRow = []
-        if l == 0:
-            pass
-        else:
-            for k in range(len(a)):
-                if k == i:
-                    pass
-                else:
-                    lthRow.append(a[l][k])
-            toReturn.append(lthRow)
-
-    return toReturn
-
-# TODO: horrible name
-def do_work(a, i, j):
+def associated_matrix(a, i, j = None):
     """Returns the associated matrix of matrix a with row index i and column index j
     
     :a: the matrix of which to find it's associated matrix
@@ -134,18 +110,32 @@ def do_work(a, i, j):
     :return: the associated matrix represented as a list of lists
     """
     toReturn = []
-    
-    for k in range(len(a)):
-        kthRow = []
-        if k == i:
-            pass
-        else:
-            for l in range(len(a)):
-                if l == j:
-                    pass
-                else:
-                    kthRow.append(a[k][l])
-            toReturn.append(kthRow)
+
+    if j is None:
+        for l in range(len(a)):
+            lthRow = []
+            if l == 0:
+                pass
+            else:
+                for k in range(len(a)):
+                    if k == i:
+                        pass
+                    else:
+                        lthRow.append(a[l][k])
+                toReturn.append(lthRow)
+
+    else:
+        for k in range(len(a)):
+            kthRow = []
+            if k == i:
+                pass
+            else:
+                for l in range(len(a)):
+                    if l == j:
+                        pass
+                    else:
+                        kthRow.append(a[k][l])
+                toReturn.append(kthRow)
 
     return toReturn
 
@@ -185,7 +175,7 @@ def matrix_of_minors(a):
     for i in range(len(a)):
         ithRow = []
         for j in range(len(a)):
-            ithRow.append(determinant(do_work(a,i,j)))
+            ithRow.append(determinant(associated_matrix(a,i,j)))
         toReturn.append(ithRow)
 
     return toReturn
