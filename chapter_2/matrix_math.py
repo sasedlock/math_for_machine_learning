@@ -64,13 +64,13 @@ def multiply(a,b):
     # else we're working with matricies of differing sizes
     else:
         for i in range(length_a):
-                ithRow = []
-                for j in range(len(first_element_b)):
-                    sum = 0
-                    for k in range(len(first_element_a)):
-                        sum += a[i][k] * b[k][j]
-                    ithRow.append(sum)
-                toReturn.append(ithRow)
+            ithRow = []
+            for j in range(len(first_element_b)):
+                sum = 0
+                for k in range(len(first_element_a)):
+                    sum += a[i][k] * b[k][j]
+                ithRow.append(sum)
+            toReturn.append(ithRow)
 
     return toReturn
 
